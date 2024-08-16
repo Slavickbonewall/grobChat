@@ -74,6 +74,10 @@ body.dark-mode #sendButton {
     box-sizing: border-box;
 }
 
+#chat{
+    background-color: #1A1D1F;
+}
+
 #messageContainer {
     display: flex;
     width: 100%;
