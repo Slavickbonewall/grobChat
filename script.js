@@ -1,4 +1,4 @@
-// Lista de emojis para nombres de usuario
+         // Lista de emojis para nombres de usuario
         const emojiList = ['🦗', '🌟', '🚀', '🐱', '🎉', '🍀', '💬'];
 
         // Selecciona un emoji aleatorio
