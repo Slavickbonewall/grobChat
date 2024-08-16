@@ -1,4 +1,4 @@
-         // Lista de emojis para nombres de usuario
+ // Lista de emojis para nombres de usuario
         const emojiList = ['🦗', '🌟', '🚀', '🐱', '🎉', '🍀', '💬'];
 
         // Selecciona un emoji aleatorio
@@ -20,10 +20,11 @@
         }
 
         document.addEventListener('DOMContentLoaded', () => {
-            const ws = new WebSocket('https://grobchat.onrender.com');
+            const ws = new WebSocket('wss://grobchat.onrender.com'); // Asegúrate de usar 'wss' para WebSocket seguro
 
             ws.onopen = () => {
                 console.log('Conectado al servidor WebSocket');
+                ws.send(`Usuario conectado: ${username}`);
             };
 
             ws.onmessage = (event) => {
@@ -31,16 +32,17 @@
                 const newMessage = document.createElement('div');
                 newMessage.classList.add('message');
 
-                if (event.data instanceof Blob) {
+                // Verifica si el mensaje recibido es texto
+                if (typeof event.data === 'string') {
+                    newMessage.textContent = event.data; 
+                    messagesDiv.appendChild(newMessage);
+                } else if (event.data instanceof Blob) {
                     const reader = new FileReader();
                     reader.onload = () => {
                         newMessage.textContent = reader.result; 
                         messagesDiv.appendChild(newMessage);
                     };
                     reader.readAsText(event.data);
-                } else {
-                    newMessage.textContent = event.data; 
-                    messagesDiv.appendChild(newMessage);
                 }
             };
 
