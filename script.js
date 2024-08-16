@@ -16,8 +16,9 @@
         document.addEventListener('DOMContentLoaded', () => {
             const ws = new WebSocket('https://grobchat.onrender.com');
 
-            ws.onopen = () => {
+             ws.onopen = () => {
                 console.log('Conectado al servidor WebSocket');
+                ws.send(`Usuario conectado: ${username}`);
             };
 
             ws.onmessage = (event) => {
