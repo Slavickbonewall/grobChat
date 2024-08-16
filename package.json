@@ -7,6 +7,6 @@
     "build": "echo 'No build command specified'"
   },
   "dependencies": {
-    "ws": "^8.7.0"
+    "ws": "^8.18.0"
   }
 }
