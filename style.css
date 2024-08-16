@@ -44,7 +44,7 @@ body.dark-mode #chat {
 
 body.dark-mode #messageInput {
     background-color: #1A1D1F; 
-    border: 1px solid #333;
+    border: none;
 }
 
 body.dark-mode #sendButton {
