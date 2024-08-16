@@ -1,17 +1,57 @@
 <!DOCTYPE html>
 <html lang="es">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Chat en Tiempo Real</title>
     <link rel="stylesheet" href="style.css">
 </head>
+
 <body>
+    <div class="navbar">
+        <button id="themeToggle">🌙</button>
+        <h1>GRUPETEhub</h1>
+        <a href="https://github.com/tuusuario/tu-repo" target="_blank" class="github-icon">
+            <span>GitHub</span>
+            <img src="https://github.com/tuusuario.png" alt="Tu Perfil GitHub">
+        </a>
+    </div>
     <div id="chat">
         <div id="messages"></div>
-        <input id="messageInput" type="text" placeholder="Escribe un mensaje...">
-        <button id="sendButton">Enviar</button>
+        <div id="messageContainer">
+            <input id="messageInput" type="text" placeholder="Escribe un mensaje...">
+            <button id="sendButton">Enviar</button>
+        </div>
     </div>
     <script src="script.js"></script>
+    <script>
+        // script.js
+
+        document.addEventListener('DOMContentLoaded', () => {
+            const themeToggle = document.getElementById('themeToggle');
+            const body = document.body;
+
+            // Check for saved theme in localStorage
+            const savedTheme = localStorage.getItem('theme');
+            if (savedTheme) {
+                body.classList.add(savedTheme);
+            }
+
+            themeToggle.addEventListener('click', () => {
+                if (body.classList.contains('dark-mode')) {
+                    body.classList.replace('dark-mode', 'light-mode');
+                    localStorage.setItem('theme', 'light-mode');
+                    themeToggle.textContent = '🌙'; // Sun emoji for light mode
+                } else {
+                    body.classList.replace('light-mode', 'dark-mode');
+                    localStorage.setItem('theme', 'dark-mode');
+                    themeToggle.textContent = '🌕'; // Moon emoji for dark mode
+                }
+            });
+        });
+
+    </script>
 </body>
+
 </html>
