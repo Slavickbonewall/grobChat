@@ -10,7 +10,7 @@ document.addEventListener('DOMContentLoaded', () => {
         const newMessage = document.createElement('div');
 
         if (event.data instanceof Blob) {
-            // Si el mensaje es un Blob, conviértelo a texto
+            
             const reader = new FileReader();
             reader.onload = () => {
                 newMessage.textContent = reader.result;
@@ -18,7 +18,7 @@ document.addEventListener('DOMContentLoaded', () => {
             };
             reader.readAsText(event.data);
         } else {
-            // Si no es un Blob, simplemente muestra el mensaje
+           
             newMessage.textContent = event.data;
             messagesDiv.appendChild(newMessage);
         }
