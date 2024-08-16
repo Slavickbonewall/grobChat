@@ -7,7 +7,6 @@ server.on('connection', ws => {
     ws.on('message', message => {
         console.log('Recibido:', message);
         
-        // Enviar el mensaje a todos los clientes conectados
         server.clients.forEach(client => {
             if (client.readyState === WebSocket.OPEN) {
                 client.send(message);
@@ -15,6 +14,5 @@ server.on('connection', ws => {
         });
     });
 
-    // Enviar un mensaje al cliente cuando se conecte
     ws.send('Bienvenido al chat!');
 });
