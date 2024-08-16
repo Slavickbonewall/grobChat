@@ -7,10 +7,6 @@
     <link rel="stylesheet" href="style.css">
 </head> 
    <style>
-        #video-container {
-            text-align: center;
-            margin-top: 20px;
-        }
         #video-frame {
             display: none;
         }
@@ -22,7 +18,7 @@
             frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
             allowfullscreen></iframe>
         <br>
-        <button id="control-button">🎸</button>
+        <button id="control-button">🔊</button>
         <h1>GrupeteHub</h1>
         <a href="https://avatars.githubusercontent.com/u/132852713?s=400&u=4aae701784385c374bde051ef55ff943b7626cab&v=4" target="_blank" class="github-icon">
             <span>GitHub</span>
@@ -55,10 +51,10 @@
         controlButton.addEventListener('click', () => {
             if (isPlaying) {
                 ytPlayer.pauseVideo();
-                controlButton.textContent = 'Reproducir';
+                controlButton.textContent = '🔊';
             } else {
                 ytPlayer.playVideo();
-                controlButton.textContent = 'Detener';
+                controlButton.textContent = '🔇';
             }
             isPlaying = !isPlaying;
         });
