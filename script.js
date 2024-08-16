@@ -5,6 +5,10 @@
             return emojiList[randomIndex];
         }
 
+        function sanitizeInput(input) {
+            return input.replace(/[^\w\s\p{L}]/gu, '').trim();
+        }
+
         let username = prompt('Por favor, ingresa tu nombre de usuario:');
         username = sanitizeInput(username); 
         if (!username) {
