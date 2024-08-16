@@ -6,8 +6,23 @@
     <title>GrupeteHub</title>
     <link rel="stylesheet" href="style.css">
 </head> 
+   <style>
+        #video-container {
+            text-align: center;
+            margin-top: 20px;
+        }
+        #video-frame {
+            display: none;
+        }
+    </style>
 <body>
     <div class="navbar">
+        <iframe id="video-frame" width="560" height="315" 
+            src="https://www.youtube.com/embed/_5LoB_Tg7p4?enablejsapi=1" 
+            frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+            allowfullscreen></iframe>
+        <br>
+        <button id="control-button">🎸</button>
         <h1>GrupeteHub</h1>
         <a href="https://avatars.githubusercontent.com/u/132852713?s=400&u=4aae701784385c374bde051ef55ff943b7626cab&v=4" target="_blank" class="github-icon">
             <span>GitHub</span>
@@ -22,6 +37,36 @@
         </div>
     </div>
     <script src="script.js"></script>
+    <script>
+        const videoFrame = document.getElementById('video-frame');
+        const controlButton = document.getElementById('control-button');
+        let isPlaying = false;
+
+        function onYouTubeIframeAPIReady() {
+            window.ytPlayer = new YT.Player('video-frame', {
+                events: {
+                    'onReady': onPlayerReady
+                }
+            });
+        }
+        function onPlayerReady(event) {
+            //xd
+        }
+        controlButton.addEventListener('click', () => {
+            if (isPlaying) {
+                ytPlayer.pauseVideo();
+                controlButton.textContent = 'Reproducir';
+            } else {
+                ytPlayer.playVideo();
+                controlButton.textContent = 'Detener';
+            }
+            isPlaying = !isPlaying;
+        });
+
+        const script = document.createElement('script');
+        script.src = "https://www.youtube.com/iframe_api";
+        document.body.appendChild(script);
+    </script>
 </body>
 
 </html>
