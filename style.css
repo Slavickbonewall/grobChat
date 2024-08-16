@@ -1,72 +1,67 @@
-/* style.css */
 
-/* General Styles */
 body {
     font-family: Arial, sans-serif;
     margin: 0;
     padding: 0;
-    background-color: #14171A; /* Dark background similar to Twitter's */
-    color: #E1E8ED; /* Light text color for contrast */
+    background-color: #14171A; 
+    color: #E1E8ED;
     display: flex;
     flex-direction: column;
     height: 100vh;
     transition: background-color 0.3s, color 0.3s;
 }
 
-/* Light Theme */
 body.light-mode {
-    background-color: #FFFFFF; /* Light background */
-    color: #000000; /* Dark text color for contrast */
+    background-color: #FFFFFF; 
+    color: #000000; 
 }
 
 body.light-mode #chat {
-    background-color: #F5F8FA; /* Light background for chat area */
-    border: 1px solid #DDDDDD; /* Light border */
+    background-color: #F5F8FA; 
+    border: 1px solid #DDDDDD;
 }
 
 body.light-mode #messageInput {
-    background-color: #FFFFFF; /* White background for input */
-    border: 1px solid #DDDDDD; /* Light border */
+    background-color: #FFFFFF;
+    border: 1px solid #DDDDDD; 
 }
 
 body.light-mode #sendButton {
-    background-color: #1DA1F2; /* Twitter blue */
+    background-color: #1DA1F2;
     color: white;
 }
 
-/* Dark Theme */
 body.dark-mode {
-    background-color: #14171A; /* Dark background */
-    color: #E1E8ED; /* Light text color */
+    background-color: #14171A; 
+    color: #E1E8ED; 
 }
 
 body.dark-mode #chat {
-    background-color: #1A1D1F; /* Dark background for chat area */
+    background-color: #1A1D1F; 
     border: 1px solid #333;
 }
 
 body.dark-mode #messageInput {
-    background-color: #1A1D1F; /* Slightly lighter background for input */
+    background-color: #1A1D1F; 
     border: 1px solid #333;
 }
 
 body.dark-mode #sendButton {
-    background-color: #1DA1F2; /* Twitter blue */
+    background-color: #1DA1F2; 
     color: white;
 }
 
-/* General Styles for #chat */
 #chat {
     position: fixed;
     bottom: 0;
     left: 50%;
-    transform: translateX(-50%); /* Center horizontally */
+    transform: translateX(-50%); 
     width: 100%;
-    max-width: 600px; /* Set a max width for the chat area */
+    max-width: 600px; 
     padding: 10px;
-    border-radius: 10px; /* Rounded corners */
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Optional shadow for effect */
-    box-sizing: border-box; /* Include padding and border in element's total width and height */
+    border-radius: 10px; 
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); 
+    box-sizing: border-box; 
 }
 
 #messages {
@@ -74,24 +69,24 @@ body.dark-mode #sendButton {
     width: 100%;
     padding: 10px;
     border-bottom: 1px solid #333;
-    max-height: 400px; /* Limit the height of messages */
-    box-sizing: border-box; /* Include padding and border in element's total width and height */
+    max-height: 400px;
+    box-sizing: border-box;
 }
 
 #messageContainer {
     display: flex;
     width: 100%;
     margin-top: 10px;
-    box-sizing: border-box; /* Include padding and border in element's total width and height */
+    box-sizing: border-box; 
 }
 
 #messageInput {
-    flex: 1; /* Allow input to take up available space */
+    flex: 1; 
     padding: 10px;
     border-radius: 20px;
     color: #E1E8ED;
     outline: none;
-    box-sizing: border-box; /* Include padding and border in element's total width and height */
+    box-sizing: border-box; 
 }
 
 #sendButton {
@@ -102,21 +97,20 @@ body.dark-mode #sendButton {
     color: white;
     cursor: pointer;
     font-size: 16px;
-    margin-left: 10px; /* Space between input and button */
-    box-sizing: border-box; /* Include padding and border in element's total width and height */
+    margin-left: 10px;
+    box-sizing: border-box; 
 }
 
 #sendButton:hover {
-    background-color: #1991DB; /* Slightly darker blue on hover */
+    background-color: #1991DB; 
 }
 
-/* Navbar Styles */
 .navbar {
     display: flex;
     justify-content: space-between;
     align-items: center;
     padding: 10px 20px;
-    background-color: #1A1D1F; /* Dark background for navbar */
+    background-color: #1A1D1F; 
     border-bottom: 1px solid #333;
 }
 
@@ -132,11 +126,11 @@ body.dark-mode #sendButton {
     color: #E1E8ED;
     font-size: 18px;
     cursor: pointer;
-    margin-right: 10px; /* Space between button and GitHub link */
+    margin-right: 10px; 
 }
 
 .navbar button:hover {
-    color: #1DA1F2; /* Change color on hover */
+    color: #1DA1F2; 
 }
 
 .navbar a {
@@ -148,7 +142,7 @@ body.dark-mode #sendButton {
 }
 
 .navbar a:hover {
-    color: #1DA1F2; /* Change color on hover */
+    color: #1DA1F2;
 }
 
 .navbar .github-icon {
