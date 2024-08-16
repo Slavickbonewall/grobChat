@@ -7,9 +7,9 @@
             return emojiList[randomIndex];
         }
 
-        // Sanitiza el nombre de usuario eliminando caracteres no alfanuméricos y otros peligrosos
+        // Sanitiza el nombre de usuario permitiendo emojis y caracteres especiales
         function sanitizeInput(input) {
-            return input.replace(/[^\w\s\p{L}]/gu, '').trim(); // Mantiene letras, números y espacios
+            return input.replace(/[^\p{L}\p{N}\s\p{Emoji}]/gu, '').trim(); // Permite letras, números, espacios y emojis
         }
 
         // Solicita el nombre de usuario al cargar la página
