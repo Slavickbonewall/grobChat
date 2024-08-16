@@ -3,7 +3,6 @@ document.addEventListener('DOMContentLoaded', () => {
     ws.onopen = () => {
         console.log('Conectado al servidor WebSocket');
     };
-
     ws.onmessage = (event) => {
         const messagesDiv = document.getElementById('messages');
         const newMessage = document.createElement('div');
