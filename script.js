@@ -6,6 +6,7 @@
         }
 
         let username = prompt('Por favor, ingresa tu nombre de usuario:');
+        username = sanitizeInput(username); 
         if (!username) {
             username = getRandomEmoji();
         }
