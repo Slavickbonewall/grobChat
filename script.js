@@ -25,7 +25,8 @@ document.addEventListener('DOMContentLoaded', () => {
         const messageInput = document.getElementById('messageInput');
         const message = messageInput.value;
         if (message) {
-            ws.send(message);
+            const formattedMessage = `Tú: ${message}`;
+            ws.send(formattedMessage);
             messageInput.value = '';
         }
     };
