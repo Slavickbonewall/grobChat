@@ -6,6 +6,7 @@ document.addEventListener('DOMContentLoaded', () => {
     ws.onmessage = (event) => {
         const messagesDiv = document.getElementById('messages');
         const newMessage = document.createElement('div');
+        newMessage.classList.add('message');
 
         if (event.data instanceof Blob) {
             const reader = new FileReader();
