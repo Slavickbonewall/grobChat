@@ -1,5 +1,5 @@
 document.addEventListener('DOMContentLoaded', () => {
-     const ws = new WebSocket('wss://grobchat.onrender.com');
+    const ws = new WebSocket(`https://grobchat.onrender.com`);
 
     ws.onopen = () => {
         console.log('Conectado al servidor WebSocket');
@@ -10,16 +10,14 @@ document.addEventListener('DOMContentLoaded', () => {
         const newMessage = document.createElement('div');
 
         if (event.data instanceof Blob) {
-            
             const reader = new FileReader();
             reader.onload = () => {
-                newMessage.textContent = reader.result;
+                newMessage.textContent = reader.result; 
                 messagesDiv.appendChild(newMessage);
             };
             reader.readAsText(event.data);
         } else {
-           
-            newMessage.textContent = event.data;
+            newMessage.textContent = event.data; 
             messagesDiv.appendChild(newMessage);
         }
     };
