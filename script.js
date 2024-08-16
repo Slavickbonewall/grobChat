@@ -1,4 +1,4 @@
- // Lista de emojis para nombres de usuario
+// Lista de emojis para nombres de usuario
         const emojiList = ['🦗', '🌟', '🚀', '🐱', '🎉', '🍀', '💬'];
 
         // Selecciona un emoji aleatorio
@@ -7,14 +7,8 @@
             return emojiList[randomIndex];
         }
 
-        // Sanitiza el nombre de usuario permitiendo emojis y caracteres especiales
-        function sanitizeInput(input) {
-            return input.replace(/[^\p{L}\p{N}\s\p{Emoji}]/gu, '').trim(); // Permite letras, números, espacios y emojis
-        }
-
         // Solicita el nombre de usuario al cargar la página
         let username = prompt('Por favor, ingresa tu nombre de usuario:');
-        username = sanitizeInput(username); // Sanitiza la entrada del usuario
         if (!username) {
             username = getRandomEmoji(); // Usa un emoji aleatorio si no se proporciona un nombre
         }
