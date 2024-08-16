@@ -13,6 +13,6 @@ server.on('connection', ws => {
             }
         });
     });
-    ws.send('Bienvenido a Un lugar sin censura');
+    ws.send('Bienvenido');
 });
 console.log(`Servidor WebSocket escuchando en el puerto ${PORT}`);
