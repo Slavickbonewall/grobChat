@@ -13,6 +13,6 @@ server.on('connection', ws => {
             }
         });
     });
-    ws.send('Bienvenido');
+   ws.send('Bienvenido\n\n');
 });
 console.log(`Servidor WebSocket escuchando en el puerto ${PORT}`);
