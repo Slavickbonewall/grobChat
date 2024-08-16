@@ -1,6 +1,5 @@
 document.addEventListener('DOMContentLoaded', () => {
     const ws = new WebSocket(`https://grobchat.onrender.com`);
-
     ws.onopen = () => {
         console.log('Conectado al servidor WebSocket');
     };
