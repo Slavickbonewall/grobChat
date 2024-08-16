@@ -23,33 +23,6 @@
         </div>
     </div>
     <script src="script.js"></script>
-    <script>
-        // script.js
-
-        document.addEventListener('DOMContentLoaded', () => {
-            const themeToggle = document.getElementById('themeToggle');
-            const body = document.body;
-
-            // Check for saved theme in localStorage
-            const savedTheme = localStorage.getItem('theme');
-            if (savedTheme) {
-                body.classList.add(savedTheme);
-            }
-
-            themeToggle.addEventListener('click', () => {
-                if (body.classList.contains('dark-mode')) {
-                    body.classList.replace('dark-mode', 'light-mode');
-                    localStorage.setItem('theme', 'light-mode');
-                    themeToggle.textContent = '🌙'; // Sun emoji for light mode
-                } else {
-                    body.classList.replace('light-mode', 'dark-mode');
-                    localStorage.setItem('theme', 'dark-mode');
-                    themeToggle.textContent = '🌕'; // Moon emoji for dark mode
-                }
-            });
-        });
-
-    </script>
 </body>
 
 </html>
