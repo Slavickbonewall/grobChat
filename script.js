@@ -1,4 +1,7 @@
- let username = prompt('Por favor, ingrese su nombre de usuario:'); 
+let username = prompt('Por favor, ingresa tu nombre de usuario:');
+        if (!username) {
+            username = 'Gru'; 
+        }
 
         document.addEventListener('DOMContentLoaded', () => {
             const ws = new WebSocket('https://grobchat.onrender.com');
