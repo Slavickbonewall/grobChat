@@ -1,6 +1,13 @@
-let username = prompt('Por favor, ingresa tu nombre de usuario:');
+        const emojiList = ['🦗', '🐖', '🐕', '🐱', '🐢', '🍀', '💬'];
+
+        function getRandomEmoji() {
+            const randomIndex = Math.floor(Math.random() * emojiList.length);
+            return emojiList[randomIndex];
+        }
+
+        let username = prompt('Por favor, ingresa tu nombre de usuario:');
         if (!username) {
-            username = 'Gru'; 
+            username = getRandomEmoji();
         }
 
         document.addEventListener('DOMContentLoaded', () => {
